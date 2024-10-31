@@ -3,7 +3,7 @@ pipeline {
   agent {
     docker {
         image 'maven:latest'
-        args '-v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/jenkins/.m2:/home/jenkins/.m2'
+        args '-v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/jenkins/.m2:/root/.m2'
         args '--workdir /var/lib/jenkins/workspace/demo_cicd/java-maven-sonar-argocd-helm-k8s/spring-boot-app'
     }
 }
