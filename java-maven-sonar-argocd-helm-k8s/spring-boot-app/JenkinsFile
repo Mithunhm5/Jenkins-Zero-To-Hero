@@ -19,6 +19,8 @@ pipeline {
       steps {
         //sh 'ls -ltr'
         // build the project and create a JAR file
+        docker run -v /path/to/host/.m2:/root/.m2 maven:latest mvn clean package
+
         sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn clean package -e -X'
       }
     }
