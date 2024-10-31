@@ -3,7 +3,7 @@ pipeline {
   agent {
     docker {
         image 'maven:latest'
-        args '-v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/jenkins/.m2:/root/.m2'
+        args '-v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/jenkins/.m2:/root/.m2 -v /tmp/m2:/tmp/m2'
         args '--workdir /var/lib/jenkins/workspace/demo_cicd/java-maven-sonar-argocd-helm-k8s/spring-boot-app'
     }
 }
@@ -21,7 +21,7 @@ pipeline {
         //sh 'ls -ltr'
         // build the project and create a JAR file
         
-        sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn clean package -e -X -Dmaven.repo.local=/home/jenkins/.m2/repository'
+        sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn clean package -Dmaven.repo.local=/tmp/m2/repository -e -X'
     }
 }
 
