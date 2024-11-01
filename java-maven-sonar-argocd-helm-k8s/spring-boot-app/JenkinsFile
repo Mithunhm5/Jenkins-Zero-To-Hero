@@ -34,10 +34,10 @@ pipeline {
       steps {
           withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
           sh '''
-    cd java-maven-sonar-argocd-helm-k8s/spring-boot-app
-    mkdir -p /tmp/.sonar/cache
-    chmod 777 /tmp/.sonar/cache
-    mvn sonar:sonar -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=${SONAR_URL} -Dmaven.repo.local=/tmp/m2/repository -Dsonar.cacheDir=/tmp/.sonar/cache
+   sudo cd java-maven-sonar-argocd-helm-k8s/spring-boot-app
+  sudo  mkdir -p /tmp/.sonar/cache
+    sudo chmod 777 /tmp/.sonar/cache
+    sudo mvn sonar:sonar -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=${SONAR_URL} -Dmaven.repo.local=/tmp/m2/repository -Dsonar.cacheDir=/tmp/.sonar/cache
 '''
 
 
