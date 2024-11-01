@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'maven:3.8.1-openjdk-11'  // Use an appropriate image that has Docker
-            args '-v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/jenkins/.m2:/root/.m2 --workdir /var/lib/jenkins/workspace/demo_cicd/java-maven-sonar-argocd-helm-k8s/spring-boot-app'
+            args '-v /var/run/docker.sock:/var/run/docker.sock -v /var/lib/jenkins/.m2:/root/.m2 --workdir /var/lib/jenkins/workspace/demo_cicd/java-maven-sonar-argocd-helm-k8s/spring-boot-app/src/main'
         }
     }
 
