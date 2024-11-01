@@ -1,0 +1,18 @@
+1.In git
+- src/main
+- Jenkins file
+- Dockerfile
+- pom.xml
+
+- Deployment.yaml
+- Service.yaml
+
+2. Tools
+t2.large ec2 instance
+- Jenkins
+- Sonarqube
+- Docker
+
+local
+- k8s(minikube)
+- argocd
